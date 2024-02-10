@@ -1,0 +1,46 @@
+.feedback
+    .feedback__container.container
+        h2.feedback__title Contact Us
+
+        form.feedback__form.form
+            .form__group
+                input.form__input#name(placeholder=" " autocomplete="off")
+                label.form__label(for="name") What is your name?
+
+            .form__group.form__group--dropdown
+                input.form__input#inv-type(placeholder=" " autocomplete="off" readonly)
+                label.form__label(for="inv-type") Chose your investor type
+                fieldset.form__dropdown
+                    .form__dropdown-item
+                        input#dp1(type="radio" name="inv-type" value="Financial Proffesional")
+                        label.form__dropdown-content(for="dp1")
+                            p.form__dropdown-title Financial Proffesional
+                            p.form__dropdown-desc I’m looking to investments for my clients timely insights, and to connect with my relationship manager
+
+                    .form__dropdown-item
+                        input#dp2(type="radio" name="inv-type" value="Institutional Investor")
+                        label.form__dropdown-content(for="dp2")
+                            p.form__dropdown-title Institutional Investor
+                            p.form__dropdown-desc I’m looking for investment strategies, research and to connect with my relationship manager
+
+                    .form__dropdown-item
+                        input#dp3(type="radio" name="inv-type" value="Individual Investor")
+                        label.form__dropdown-content(for="dp3")
+                            p.form__dropdown-title Individual Investor
+                            p.form__dropdown-desc I’m looking for investment solutions, and education for myself I am a qualified or retail investor
+
+
+            .form__group
+                input.form__input#phone(type="tel" placeholder=" " autocomplete="off")
+                label.form__label(for="phone") Phone number
+
+
+            .form__group
+                input.form__input#email(placeholder=" " autocomplete="off")
+                label.form__label(for="email") E-mail
+
+            .form__group
+                input.form__input#comment(placeholder=" " autocomplete="off")
+                label.form__label(for="comment") Comment (Optionally)
+
+

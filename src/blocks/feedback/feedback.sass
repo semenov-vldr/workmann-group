@@ -1,0 +1,115 @@
+.feedback
+  margin: auto
+  width: 100%
+  background-color: #0A0E11
+  color: #FDFCFC
+  padding: 136px 0
+  border-radius: 60px
+  @media (max-width: $width-tablet)
+    padding: 72px 0
+  @media (max-width: $width-mobile)
+    padding: 48px 0
+    border-radius: 40px
+
+  &__container
+    display: grid
+    grid-template-columns: auto 1fr
+    gap: 32px
+    justify-content: space-between
+    @media (max-width: $width-mobile)
+      grid-template-columns: 1fr
+
+  &__title
+    @include fontSize(24, 64)
+    font-weight: 600
+    line-height: 1
+    @media (max-width: $width-tablet)
+      margin-bottom: 40px
+
+  .form
+    max-width: 820px
+    width: 100%
+    margin-left: auto
+    display: flex
+    flex-direction: column
+    gap: 64px
+    @media (max-width: $width-tablet)
+      gap: 48px
+    @media (max-width: $width-mobile)
+      gap: 40px
+
+    &__group
+      position: relative
+      width: 100%
+      &--dropdown input
+        cursor: pointer
+
+    &__label
+      pointer-events: none
+      position: absolute
+      color: #6A7378
+      top: 0
+      left: 0
+      @include fontSize(16, 42)
+      transition: 0.3s
+
+    &__input
+      outline: none
+      border: none
+      width: 100%
+      padding: 8px 4px 4px
+      border-bottom: 1px solid #EAECEE
+      @include fontSize(16, 42)
+      color: #FDFCFC
+      &:focus + .form__label,
+      &:not(:placeholder-shown) + .form__label
+        transform: translateY(-100%)
+        @include fontSize(12, 24)
+
+    &__dropdown
+      display: none
+      position: absolute
+      z-index: 1
+      width: 100%
+      padding: 32px 100px 32px 32px
+      border-radius: 30px
+      color: #0A0E11
+      bottom: -4px
+      transform: translateY(100%)
+      background-color: #EAECEE
+      flex-direction: column
+      gap: 32px
+      &.visible
+        display: flex
+      @media (max-width: $width-mobile)
+        padding: 24px 56px 24px 24px
+      &-item
+        position: relative
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding-left: 44px
+        @media (max-width: $width-tablet)
+          padding-left: 40px
+        input[type="radio"]
+          display: none
+        input[type="radio"]:checked + label::before
+          background-image: url('../img/icons/check-true.svg')
+        label::before
+          content: ""
+          position: absolute
+          left: 0
+          top: 50%
+          transform: translateY(-50%)
+          background-image: url('../img/icons/check-false.svg')
+          width: 22px
+          height: 22px
+          background-repeat: no-repeat
+          background-position: center
+          background-size: cover
+      &-title
+        font-weight: 700
+        @include fontSize(16, 25)
+      &-desc
+        @include fontSize(11, 16)
+
