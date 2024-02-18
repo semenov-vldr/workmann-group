@@ -20,6 +20,11 @@ if (feedback) {
       invTypeInput.value = selectedType.value;
     }
   });
+  var inputPhone = document.querySelector("#phone");
+  var iti = window.intlTelInput(inputPhone, {
+    initialCountry: "cz",
+    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/19.2.19/js/utils.js"
+  });
 }
 "use strict";
 
@@ -36,3 +41,43 @@ function mobileFooterNav() {
 }
 mobileFooterNav();
 "use strict";
+"use strict";
+
+var popupTypeBtn = document.querySelector(".popup-type-btn");
+if (popupTypeBtn) {
+  var setTypeValue = function setTypeValue(initialValue) {
+    popupTypeList.forEach(function (typeItem) {
+      if (typeItem.dataset.type === initialValue) {
+        typeItem.classList.add('js-type-active');
+      }
+    });
+  };
+  //window.localStorage.clear();
+
+  var popupTypeBtnValue = popupTypeBtn.querySelector(".popup-type-btn-value");
+  var popupType = document.querySelector(".popup-type");
+  var popupTypeList = popupType.querySelectorAll(".popup-type-item");
+  var startedType = window.localStorage.getItem('investorType');
+  var selectedType;
+  if (startedType) {
+    popupTypeBtnValue.textContent = window.localStorage.getItem('investorType');
+    setTypeValue(startedType);
+  }
+  popupTypeBtn.addEventListener("click", function () {
+    popupType.classList.toggle("js-active");
+  });
+  popupTypeList.forEach(function (popupTypeItem) {
+    popupTypeItem.addEventListener("click", function () {
+      popupTypeList.forEach(function (popupTypeItem) {
+        popupTypeItem.classList.remove('js-type-active');
+      });
+      var dataTypeItem = popupTypeItem.dataset.type;
+      window.localStorage.setItem("investorType", dataTypeItem);
+      selectedType = window.localStorage.getItem('investorType');
+      popupTypeBtnValue.textContent = selectedType;
+      //this.classList.add('js-type-active');
+
+      setTypeValue(selectedType);
+    });
+  });
+}
