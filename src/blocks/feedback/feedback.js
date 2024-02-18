@@ -10,7 +10,7 @@ if (feedback) {
   invTypeInput.addEventListener("click", () => {
     dropdown.classList.add('visible');
     formGroupDropdown.classList.add('selected');
-  })
+  });
 
   document.addEventListener("click", (evt) => {
     if (evt.target !== invTypeInput) {
@@ -20,8 +20,18 @@ if (feedback) {
 
     const selectedType = document.querySelector("input[type='radio']:checked");
     if (selectedType) {
-      invTypeInput.value = selectedType.value
+      invTypeInput.value = selectedType.value;
     }
+  });
 
-  })
+
+  const inputPhone = document.querySelector("#phone");
+
+  const iti = window.intlTelInput(inputPhone, {
+    initialCountry: "cz",
+    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/19.2.19/js/utils.js"
+  });
+
+
+
 }

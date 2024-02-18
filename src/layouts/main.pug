@@ -21,6 +21,8 @@ html(lang="ru-RU")
         link(rel="stylesheet" type='text/css' href="assets/css/libs.css")
         link(rel="stylesheet" type='text/css' href="assets/css/main.css")
 
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/19.2.19/css/intlTelInput.css")
+
 
         //[if lt IE 9]
         script(src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js")
@@ -34,10 +36,11 @@ html(lang="ru-RU")
 
 
     body
-        //include ../blocks/header/header
+        include ../blocks/header/header
         main.main
             block content
         //include ../blocks/footer/footer
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/19.2.19/js/intlTelInput.min.js")
     script(src="assets/scripts/libs.min.js")
     script(src="assets/scripts/main.js" type="module")
     block script

@@ -1,11 +1,17 @@
 .container
   max-width: 1920px
   min-width: 300px
-  padding: 0 180px
+  padding: 0 120px
   margin: 0 auto
   box-sizing: content-box
+  @media (max-width: $width-laptop)
+    padding: 0 72px
+  @media (max-width: $width-laptop-mini)
+    padding: 0 64px
   @media (max-width: $width-tablet)
-    padding: 0 56px
+    padding: 0 80px
+  @media (max-width: $width-tablet)
+    padding: 0 40px
   @media (max-width: $width-mobile)
     padding: 0 24px
 

@@ -1,0 +1,189 @@
+.popup-type
+  width: 100%
+  position: absolute
+  max-height: 90vh
+  bottom: -1px
+  left: 0
+  right: 0
+  background-color: $grey-light
+  border-radius: 0 0 40px 40px
+  //border: 1px solid tomato
+  overflow: auto
+  opacity: 0
+  visibility: hidden
+  transform: translateY(95%)
+  transition: 0.3s
+  z-index: 3
+  &.js-active
+    opacity: 1
+    transform: translateY(100%)
+    visibility: visible
+
+  @media (max-width: $width-mobile)
+    border-radius: 0 0 20px 20px
+
+
+  &__container
+    padding-top: 44px
+    padding-bottom: 120px
+    display: flex
+    flex-direction: column
+    gap: 40px
+    @media (max-width: $width-laptop-mini) and (max-width: $width-mobile)
+      gap: 24px
+      padding-top: 16px
+    @media (max-width: $width-tablet)
+      gap: 16px
+
+  &__title
+    font-weight: 700
+    font-size: 42px
+    @media (max-width: $width-tablet)
+      font-size: 42px
+    @media (max-width: $width-laptop-mini) and (max-width: $width-mobile)
+      font-size: 25px
+      margin-bottom: 8px
+
+
+  &__subtitle
+    font-size: 25px
+    font-weight: 600
+    @media (max-width: $width-tablet)
+      font-size: 25px
+    @media (max-width: $width-laptop-mini) and (max-width: $width-mobile)
+      font-size: 16px
+
+
+  &__list
+    display: flex
+    gap: 40px
+    align-items: center
+    @media (max-width: $width-laptop-mini)
+      gap: 24px
+    @media (max-width: $width-tablet)
+      flex-direction: column
+      gap: 16px
+
+
+  &-item
+    background-color: $white
+    max-width: 490px
+    width: 100%
+    padding: 30px 56px 30px 24px
+    display: flex
+    align-items: center
+    gap: 24px
+    border-radius: 30px
+    cursor: pointer
+    transition: 0.3s
+    align-self: stretch
+    @media (max-width: $width-tablet)
+      padding: 24px 40px 24px 24px
+      max-width: none
+    @media (max-width: $width-laptop-mini) and (max-width: $width-mobile)
+      padding: 16px 40px 16px 24px
+      gap: 16px
+      border-radius: 20px
+    &:hover,
+    &.js-type-active
+      background-color: $black
+    &:hover .popup-type-item__title,
+    &:hover .popup-type-item__desc,
+    &.js-type-active .popup-type-item__title,
+    &.js-type-active .popup-type-item__desc
+      color: $white
+    &:hover svg .hover-yellow,
+    &.js-type-active svg .hover-yellow
+      fill: #FEF197
+    &:hover svg .hover-darkgrey,
+    &.js-type-active svg .hover-darkgrey
+      fill: #6A7378
+
+    &__title
+      font-weight: 700
+      font-size: 25px
+      margin-bottom: 8px
+      @media (max-width: $width-tablet)
+        font-size: 25px
+      @media (max-width: $width-laptop-mini) and (max-width: $width-mobile)
+        font-size: 16px
+
+    &__desc
+      font-size: 16px
+      color: $grey-deep
+      @media (max-width: $width-tablet)
+        font-size: 16px
+      @media (max-width: $width-laptop-mini) and (max-width: $width-mobile)
+        font-size: 12px
+
+
+    & > svg
+      flex: 0 0 96px
+      height: 100%
+      path, circle
+        transition: 0.3s
+      @media (max-width: $width-laptop-mini)
+        flex: 0 0 64px
+      @media (max-width: $width-mobile)
+        flex: 0 0 72px
+
+  &-confirm
+    max-width: 40%
+    display: flex
+    flex-direction: column
+    gap: 8px
+    @media (max-width: $width-tablet)
+      max-width: 70%
+    @media (max-width: $width-mobile)
+      max-width: 80%
+
+    &__title
+      font-weight: 700
+      font-size: 16px
+      @media (max-width: $width-tablet)
+        font-size: 16px
+      @media (max-width: $width-laptop-mini) and (max-width: $width-mobile)
+        font-size: 12px
+
+    &__text
+      font-size: 16px
+      font-weight: 500
+      @media (max-width: $width-tablet)
+        font-size: 16px
+      @media (max-width: $width-laptop-mini) and (max-width: $width-mobile)
+        font-size: 12px
+
+
+  &__actions
+    display: flex
+    align-items: center
+    gap: 16px
+    @media (max-width: $width-mobile)
+      gap: 4px
+      display: grid
+      grid-template-columns: 1fr 1fr
+
+  &__btn
+    white-space: nowrap
+    font-size: 25px
+    font-weight: 700
+    padding: 16px 45px
+    border-radius: 100px
+    transition: 0.3s
+    @media (max-width: $width-laptop-mini)
+      font-size: 16px
+    @media (max-width: $width-mobile)
+      width: 100%
+
+    &--agree
+      background-color: $black
+      color: $white
+    &--disagree
+      background-color: $white
+      color: $black
+    &:hover
+      background-color: $yellow
+      color: $black
+
+
+

@@ -1,0 +1,34 @@
+.popup-type
+    .popup-type__container.container
+        .popup-type__header
+            h2.popup-type__title Welcome <br> to Workmann
+            p.popup-type__subtitle Chose your investor type to help us deliver the site experience most relevant to you
+
+        ul.popup-type__list
+
+            li.popup-type__item.popup-type-item(data-type="Financial Professional")
+                include ../../img/icons/finpro-icon.svg
+                .popup-type-item__content
+                    h3.popup-type-item__title Financial Professional
+                    p.popup-type-item__desc I’m looking to investments for my clients timely insights, and to connect with my relationship manager
+
+            li.popup-type__item.popup-type-item(data-type="Institutional Investor")
+                include ../../img/icons/instinv-icon.svg
+                .popup-type-item__content
+                    h3.popup-type-item__title Institutional Investor
+                    p.popup-type-item__desc I’m looking for investment strategies, research and to connect with my relationship manager
+
+            li.popup-type__item.popup-type-item(data-type="Individual Investor")
+                include ../../img/icons/indiinv-icon.svg
+                .popup-type-item__content
+                    h3.popup-type-item__title Individual Investor
+                    p.popup-type-item__desc I’m looking for investment solutions, and education for myself I am a qualified or retail investor
+
+
+        .popup-type__confirm.popup-type-confirm
+            p.popup-type-confirm__title Please confirm the following by clicking “I agree”
+            p.popup-type-confirm__text y accessing and using this website, the User acknowledges that they have read understood, and agree to comply with the terms and conditions set forth in this Agreement The User confirms that they are of legal age to enter into such an agreement
+
+        .popup-type__actions
+            button.popup-type__btn.popup-type__btn--agree I Agree
+            button.popup-type__btn.popup-type__btn--disagree No, Thanks

@@ -1,46 +1,63 @@
 .feedback
-    .feedback__container.container
-        h2.feedback__title Contact Us
 
-        form.feedback__form.form
-            .form__group
-                input.form__input#name(placeholder=" " autocomplete="off")
-                label.form__label(for="name") What is your name?
+    form.feedback__form.form
+        .form__group
+            input.form__input#name(placeholder=" " autocomplete="off" minlength="2" required)
+            label.form__label(for="name") What is your name?
 
-            .form__group.form__group--dropdown
-                input.form__input#inv-type(placeholder=" " autocomplete="off" readonly)
-                label.form__label(for="inv-type") Chose your investor type
-                fieldset.form__dropdown
-                    .form__dropdown-item
-                        input#dp1(type="radio" name="inv-type" value="Financial Proffesional")
-                        label.form__dropdown-content(for="dp1")
-                            p.form__dropdown-title Financial Proffesional
-                            p.form__dropdown-desc I’m looking to investments for my clients timely insights, and to connect with my relationship manager
+        .form__group.form__group--dropdown
+            input.form__input#inv-type(placeholder=" " autocomplete="off" readonly)
+            label.form__label(for="inv-type") Chose your investor type
+            fieldset.form__dropdown
+                .form__dropdown-item
+                    input#dp1(type="radio" name="inv-type" value="Financial Proffesional")
+                    label.form__dropdown-content(for="dp1")
+                        p.form__dropdown-title Financial Proffesional
+                        p.form__dropdown-desc I’m looking to investments for my clients timely insights, and to connect with my relationship manager
 
-                    .form__dropdown-item
-                        input#dp2(type="radio" name="inv-type" value="Institutional Investor")
-                        label.form__dropdown-content(for="dp2")
-                            p.form__dropdown-title Institutional Investor
-                            p.form__dropdown-desc I’m looking for investment strategies, research and to connect with my relationship manager
+                .form__dropdown-item
+                    input#dp2(type="radio" name="inv-type" value="Institutional Investor")
+                    label.form__dropdown-content(for="dp2")
+                        p.form__dropdown-title Institutional Investor
+                        p.form__dropdown-desc I’m looking for investment strategies, research and to connect with my relationship manager
 
-                    .form__dropdown-item
-                        input#dp3(type="radio" name="inv-type" value="Individual Investor")
-                        label.form__dropdown-content(for="dp3")
-                            p.form__dropdown-title Individual Investor
-                            p.form__dropdown-desc I’m looking for investment solutions, and education for myself I am a qualified or retail investor
+                .form__dropdown-item
+                    input#dp3(type="radio" name="inv-type" value="Individual Investor")
+                    label.form__dropdown-content(for="dp3")
+                        p.form__dropdown-title Individual Investor
+                        p.form__dropdown-desc I’m looking for investment solutions, and education for myself I am a qualified or retail investor
 
 
-            .form__group
-                input.form__input#phone(type="tel" placeholder=" " autocomplete="off")
-                label.form__label(for="phone") Phone number
+        .form__group
+            input.form__input#phone(type="tel" autocomplete="off")
+            label.form__label.form__label--phone#phone-label(for="phone") Phone number
+
+        .form__group
+            input.form__input#email(placeholder=" " autocomplete="off")
+            label.form__label(for="email") E-mail
+
+        .form__group
+            input.form__input#comment(placeholder=" " autocomplete="off")
+            label.form__label(for="comment") Comment (Optionally)
+
+        .form__actions
 
 
-            .form__group
-                input.form__input#email(placeholder=" " autocomplete="off")
-                label.form__label(for="email") E-mail
+form.form-doc
+    .form-doc__group
+        input.form-doc__input(type="email" placeholder=" " autocomplete="off")
+        label.form-doc__label(for="email") E-mail
 
-            .form__group
-                input.form__input#comment(placeholder=" " autocomplete="off")
-                label.form__label(for="comment") Comment (Optionally)
+    div
+        <button type="submit" class="btn-send btn-send--dark">
+        <i class="btn-send__process js-send"></i>
+        <span>Access the document</span>
+        <svg class="arrow-btn" xmlns="http://www.w3.org/2000/svg" width="16" height="24" viewBox="0 0 16 24" fill="#0A0E11">
+        <path d="M6.66667 -7.15256e-07V18.8933L1.88 14.12L0 16L8 24L16 16L14.12 14.12L9.33333 18.8933V-7.15256e-07H6.66667Z"></path>
+        </svg>
+        </button>
+        span.form-doc__subtext By sending this message you agree <br> to our <a href="#">privacy policy</a> of personal data
+
+
 
 
