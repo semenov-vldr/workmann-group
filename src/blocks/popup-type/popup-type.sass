@@ -1,6 +1,7 @@
 .popup-type
   width: 100%
   position: absolute
+  min-height: 85vh
   max-height: 90vh
   bottom: -1px
   left: 0
@@ -18,9 +19,10 @@
     opacity: 1
     transform: translateY(100%)
     visibility: visible
-
   @media (max-width: $width-mobile)
     border-radius: 0 0 20px 20px
+    min-height: 100vh
+
 
 
   &__container
