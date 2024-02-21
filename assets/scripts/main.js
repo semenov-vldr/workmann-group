@@ -43,7 +43,7 @@ mobileFooterNav();
 "use strict";
 "use strict";
 
-var popupTypeBtn = document.querySelector(".popup-type-btn");
+var popupTypeBtn = document.querySelector("#popup-type-btn");
 if (popupTypeBtn) {
   var setTypeValue = function setTypeValue(initialValue) {
     popupTypeList.forEach(function (typeItem) {
