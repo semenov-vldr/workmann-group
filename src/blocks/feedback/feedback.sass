@@ -142,6 +142,7 @@
   width: 100%
   margin: 0 auto
   max-width: 1100px
+  padding: 16px 24px
 
   &__group
     position: relative
@@ -164,8 +165,9 @@
     width: 100%
     padding: 8px 4px 4px
     border-bottom: 1px solid #6A7378
-    color: #FDFCFC
+    color: #6A7378
     font-size: 42px
+    font-weight: 700
     @media (max-width: 1730px)
       font-size: 25px
     &:focus
@@ -176,16 +178,22 @@
       font-size: 24px
       @media (max-width: 1730px)
         font-size: 16px
+      @media (max-width: 1300px)
+        font-size: 12px
 
   &__subtext
     margin-top: 12px
     margin-left: 30px
     display: inline-block
-    font-size: 16px
+    font-size: 25px
     color: #0A0E11
-    font-weight: 700
-    @media (max-width: 1730px)
+    font-weight: 600
+    @media (max-width: 1300px)
       font-size: 12px
+    @media (max-width: 743px)
+      margin-left: 0
+    a
+      text-decoration: underline
 
 
 
@@ -209,13 +217,17 @@
   @media (max-width: 1730px)
     font-size: 25px
     padding: 24px 40px 24px 56px
+  @media (max-width: 1300px)
+    font-size: 16px
+    padding: 16px 42px
+    min-height: 56px
+    margin-top: 56px
+  @media (max-width: 743px)
+    margin-top: 32px
   
 
 .btn-send:hover .btn-send__process  
   transform: translateX(0)
-
-.btn-send.btn-send--dark:hover  
-  color: #0A0E11  
   
 
 .btn-send.btn-send--light  
@@ -225,8 +237,11 @@
 
 .btn-send.btn-send--dark  
   background-color: #0A0E11  
-  color: #FDFCFC  
-  
+  color: #FDFCFC
+
+.btn-send.btn-send--dark:hover
+  color: #0A0E11
+
 
 .btn-send svg  
   position: relative  

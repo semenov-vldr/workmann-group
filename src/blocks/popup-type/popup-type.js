@@ -1,4 +1,4 @@
-const popupTypeBtn = document.querySelector(".popup-type-btn");
+const popupTypeBtn = document.querySelector("#popup-type-btn");
 
 if (popupTypeBtn) {
 
@@ -17,7 +17,6 @@ if (popupTypeBtn) {
   handlePopupTypeBottom (false);
 
   const startedType = window.localStorage.getItem('investorType');
-
   let selectedType;
 
   function setTypeValue (initialValue) {
